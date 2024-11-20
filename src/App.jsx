@@ -1,5 +1,5 @@
 import { createBrowserRouter,  RouterProvider } from "react-router-dom";
-import './App.css'
+import './App.css';
 
 const router  = createBrowserRouter(
   [
@@ -10,12 +10,12 @@ const router  = createBrowserRouter(
       v7_startTransition: true,
     },
   }
-)
+);
 
 function App() {
   return (
     <RouterProvider router={router}/>
-  )
+  );
 }
 
-export default App
+export default App;
