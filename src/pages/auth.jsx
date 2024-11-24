@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Auth = ({route}) => {
+    Auth.propTypes = {route: PropTypes.string.isRequired};
     const form = useRef(null);
     const [message, setMessage] = useState('');
-    const navigate = useNavigate();
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -26,8 +26,11 @@ const Auth = ({route}) => {
             });
 
             if(response.ok) {
-                const result = await response.text();
-                setMessage(result);
+                const responseData = await response.json();
+                const token = responseData.token;
+                localStorage.setItem('token', token);
+                setMessage('Login successful!');
+                console.log('Token saved:', token);
             } else {
                 const errorMessage = await response.text();
                 setMessage(errorMessage || 'Invalid credentials');
@@ -68,7 +71,7 @@ const Auth = ({route}) => {
                     </div>
 
                     <button
-                        className="buttonStyles type-1 login-button"
+                        className="button type-1 login-button"
                         onClick={handleSubmit}
                     >
                         {route === "signup" ? "SignUp" : "Login"}
@@ -78,12 +81,12 @@ const Auth = ({route}) => {
                 
                 {message && <p>{message}</p>}
 
-                <button
-                    onClick={() => route === "signup" ? navigate("/login") : navigate("/signup")}
-                    className={`buttonStyles type-2 ${route}-button`}
+                <a
+                    href={route === "signup" ? "Login" : "Signup"}
+                    className={`button type-2 ${route}-button`}
                 >
                     {route === "signup" ? "Login" : "Signup"}
-                </button>
+                </a>
             </div>
         </div>
     );
