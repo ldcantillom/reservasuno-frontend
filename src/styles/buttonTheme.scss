@@ -1,0 +1,13 @@
+button.theme-toggle {
+    background-color: var(--color-text);
+    border: none;
+    border-radius: 30px;
+    color: var(--color-background);
+    cursor: pointer;
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+        bottom: 40px;
+        left: 40px;
+}
