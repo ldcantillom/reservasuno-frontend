@@ -1,0 +1,25 @@
+@use 'normalize.css';
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-link);
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@import './styles/variables';
+@import './styles/forms.scss';
+@import './styles/buttons.scss';
