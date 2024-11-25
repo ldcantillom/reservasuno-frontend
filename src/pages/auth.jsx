@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import PropTypes from 'prop-types';
+import './../styles/auth.scss';
 
 const Auth = ({route}) => {
     Auth.propTypes = {route: PropTypes.string.isRequired};
@@ -41,7 +42,7 @@ const Auth = ({route}) => {
     };
     return (
         <div className="auth">
-            <div className="form-container">
+            <div className={`${route} form-container`}>
                 {/* <img src="./logos/logo_form.svg" alt="logo" className="logo" /> */}
 
                 <form action="/" className="form" ref={form}>
@@ -71,7 +72,7 @@ const Auth = ({route}) => {
                     </div>
 
                     <button
-                        className="button type-1 login-button"
+                        className="button type-1"
                         onClick={handleSubmit}
                     >
                         {route === "signup" ? "SignUp" : "Login"}
@@ -83,7 +84,7 @@ const Auth = ({route}) => {
 
                 <a
                     href={route === "signup" ? "Login" : "Signup"}
-                    className={`button type-2 ${route}-button`}
+                    className={'button type-2'}
                 >
                     {route === "signup" ? "Login" : "Signup"}
                 </a>
