@@ -1,12 +1,15 @@
-import { createBrowserRouter,  RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import Auth from "./pages/auth";
+import ButtonTheme from "./components/buttonTheme";
+import Home from "./pages/home";
 
-const router  = createBrowserRouter(
+const router = createBrowserRouter(
   [
-    {path: "/", element: <></>},
-    {path: "/login", element: <><Auth route="login"></Auth></>},
-    {path: "/signup", element: <><Auth route="signup"></Auth></>}
+    { path: "/", element: <><Home /></> },
+    { path: "/home", element: <><Home /></> },
+    { path: "/login", element: <><Auth route="login" /></> },
+    { path: "/signup", element: <><Auth route="signup" /></> },
   ],
   {
     future: {
@@ -17,7 +20,10 @@ const router  = createBrowserRouter(
 
 function App() {
   return (
-    <RouterProvider router={router}/>
+    <>
+      <RouterProvider router={router} />
+      <ButtonTheme />
+    </>
   );
 }
 
