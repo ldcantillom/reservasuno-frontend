@@ -1,0 +1,115 @@
+.flight-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0 20px;
+  /* Espacio lateral para evitar que el contenido quede pegado a los bordes */
+  box-sizing: border-box;
+}
+
+.results-header {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-link);
+  color: white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.results-header h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.results-header p {
+  font-size: 16px;
+}
+
+.results-list {
+  width: 100%;
+  max-width: 1200px;
+  /* Máximo ancho en pantallas grandes */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  /* Permite scroll si hay muchas tarjetas */
+  padding-bottom: 20px;
+  /* Espacio para el scroll */
+  box-sizing: border-box;
+}
+
+.flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.flight-info p,
+.flight-price p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.flight-info p strong,
+.flight-price p strong {
+  color: #0066cc;
+}
+
+.flight-price {
+  text-align: right;
+}
+
+.flight-price p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.flight-price button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.flight-price button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flight-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .flight-price {
+    text-align: left;
+  }
+}

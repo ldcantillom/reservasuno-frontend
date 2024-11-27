@@ -3,6 +3,8 @@ import './App.css';
 import Auth from "./pages/auth";
 import ButtonTheme from "./components/buttonTheme";
 import Home from "./pages/home";
+import FlightResults from "./pages/flightResults";
+import Reserve from './pages/reserve';
 
 const router = createBrowserRouter(
   [
@@ -10,6 +12,8 @@ const router = createBrowserRouter(
     { path: "/home", element: <><Home /></> },
     { path: "/login", element: <><Auth route="login" /></> },
     { path: "/signup", element: <><Auth route="signup" /></> },
+    { path: "/flight-results", element: <><FlightResults /></> },
+    { path: "/reserves", element: <><Reserve /></> }
   ],
   {
     future: {

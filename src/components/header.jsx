@@ -9,7 +9,7 @@ const Header = () => {
                     <ul className="navbar">
                         <li><a href="/">Reservar</a></li>
                         <li><a href="/reservations">Ofertas y destinos</a></li>
-                        <li><a href="/">Tu reserva</a></li>
+                        <li><a href="/reserves">Tu reserva</a></li>
                     </ul>
                     <a className="button type-3 login-button" href="/login">Login</a>
                 </div>
