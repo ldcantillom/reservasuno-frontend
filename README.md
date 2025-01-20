@@ -1,4 +1,4 @@
-# JPA_frontend_project
+# Reservasuno Frontend
 
 # React + Vite
 
