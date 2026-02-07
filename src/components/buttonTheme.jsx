@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import './../styles/ButtonTheme.scss';
+import './../styles/buttonTheme.scss';
 
 const ButtonTheme = () => {
     const [isLightTheme, setIsLightTheme] = useState(() => {

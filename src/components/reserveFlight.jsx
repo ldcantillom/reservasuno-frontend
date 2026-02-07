@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "./../styles/FlightBookingHome.scss";
+import "./../styles/flightBookingHome.scss";
 
 const ReserveFlight = () => {
   const form = useRef(null);
